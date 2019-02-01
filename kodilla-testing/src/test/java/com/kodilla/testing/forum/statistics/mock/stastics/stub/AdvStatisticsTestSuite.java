@@ -14,41 +14,46 @@ import static org.mockito.Mockito.when;
     public class AdvStatisticsTestSuite {
 
         @Test
-        public void testShowStatisticsWithMockWithpostsCountEqualToZero() {
+        public void testShowStatisticsWithMockWithPostsCountEqualToZero() {
             //Given
             Statistics statisticsMock = mock(Statistics.class);
             int postsCount = 0;
             when(statisticsMock.postsCount()).thenReturn(postsCount);
-
-            AdvStatistics advStatistics = new AdvStatistics(null, 0, 0);
-
+            AdvStatistics countingStatistics = new AdvStatistics(statisticsMock);
+            countingStatistics.calculateAdvStatistics(statisticsMock);
 
             //When
-            Integer showedPostsCount = advStatistics.postsCount();
+            double averagePostsPerUser = countingStatistics.getAverageQuantityOfPostsPerUser();
 
 
             //Then
-            Assert.assertTrue( 0==showedPostsCount);
+            Assert.assertTrue( 0==averagePostsPerUser);
 
         }
 
-
         @Test
-        public void testShowStatisticsWithMockWithpostsCountEqualTo1000() {
+        //has to fail due the fact there is no possibility to divide by 0
+        public void testShowStatisticsWithMockWithPostsCountEqualTo1000() {
             //Given
             Statistics statisticsMock = mock(Statistics.class);
+            List<String> usersNames = mock(List.class);
+
+            int amountOfUsers=100;
+            when(usersNames.size()-1).thenReturn(amountOfUsers);
+
             int postsCount = 1000;
             when(statisticsMock.postsCount()).thenReturn(postsCount);
 
-            AdvStatistics advStatistics = new AdvStatistics(null, 1000, 0);
 
+            AdvStatistics countingStatistics = new AdvStatistics(statisticsMock);
+            countingStatistics.calculateAdvStatistics(statisticsMock);
 
             //When
-            Integer showedPostsCount = advStatistics.postsCount();
+            double averagePostsPerUser = countingStatistics.getAverageQuantityOfPostsPerUser();
 
 
             //Then
-            Assert.assertTrue( 1000==showedPostsCount);
+            Assert.assertTrue((double)10.0==(double)averagePostsPerUser);
 
         }
 
