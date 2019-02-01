@@ -17,9 +17,8 @@ import java.util.ArrayList;
         }
 
         public void addShape(Shape shape){
-            Shape triangle1=new Triangle(8,5);
-            ShapeCollector shapeCollector = new ShapeCollector(triangle1);
-            shapes.add(triangle1);
+            ShapeCollector shapeCollector=new ShapeCollector(shape);
+            shapes.add(shape);
         }
 
         public int getShapesQuantity(){
@@ -28,28 +27,26 @@ import java.util.ArrayList;
 
         public boolean removeShape(Shape shape){
             boolean result = false;
-            Shape triangle1=new Triangle(8,5);
-            if(shapes.contains(triangle1)){
-                shapes.remove(triangle1);
+            if(shapes.contains(shape)){
+                shapes.remove(shape);
                 result = true;
             }
             return result;
         }
 
         public Shape getShape(int n){
-            Shape triangle = null;
+            Shape shape = null;
             if(n>=0&&n<shapes.size()){
-                triangle = shapes.get(n);
+                shape = shapes.get(n);
             }
-            return triangle;
-
-
+            return shape;
         }
 
-        public ArrayList<Shape> showFigures(ArrayList<Shape>shapes){
-            return shapes;
+        public Shape showFigures(ArrayList<Shape>shapes) {
+            for (int i = 0; i < shapes.size(); i++) {
+            }
+            return shape;
         }
-
     }
 
 

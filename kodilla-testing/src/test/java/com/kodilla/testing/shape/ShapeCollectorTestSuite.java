@@ -33,14 +33,14 @@ public class ShapeCollectorTestSuite {
     public void testAddShape(){
 
         //Given
-        Triangle triangle=new Triangle(8,5);
-        ShapeCollector shapeCollector1 = new ShapeCollector(triangle);
+        Shape triangle=new Triangle(8, 5);
+        ShapeCollector shapeCollector=new ShapeCollector(triangle);
 
         //When
-        shapeCollector1.addShape(triangle);
+        shapeCollector.addShape(triangle);
 
         //Then
-        Assert.assertEquals(1,shapeCollector1.getShapesQuantity());
+        Assert.assertEquals(1,shapeCollector.getShapesQuantity());
     }
 
 
@@ -48,16 +48,16 @@ public class ShapeCollectorTestSuite {
     public void testGetShape(){
 
     //Given
-        Triangle triangle = new Triangle(8,5);
-        ShapeCollector shapeCollector1 = new ShapeCollector(triangle);
-        shapeCollector1.addShape(triangle);
+        Shape circle = new Circle(4);
+        ShapeCollector shapeCollector1 = new ShapeCollector(circle);
+        shapeCollector1.addShape(circle);
 
      //When
         Shape retrievedShape;
          retrievedShape = shapeCollector1.getShape(0);
 
      //Then
-       Assert.assertEquals(triangle,retrievedShape);
+       Assert.assertEquals(circle,retrievedShape);
 
     }
 
@@ -65,14 +65,14 @@ public class ShapeCollectorTestSuite {
     public void testRemoveNonExistingShape(){
 
         //Given
-        Circle circle1=new Circle(4);
+        Shape circle1=new Circle(4);
         ShapeCollector shapeCollector1 = new ShapeCollector(circle1);
 
         //When
         boolean result = shapeCollector1.removeShape(circle1);
 
         //Then
-        Assert.assertEquals(circle1,result);
+        Assert.assertFalse(result);
     }
 
     @Test
@@ -80,9 +80,9 @@ public class ShapeCollectorTestSuite {
     public void testRemoveShape(){
 
         //Given
-        Circle circle1=new Circle(4);
+        Shape circle1=new Circle(4);
         ShapeCollector shapeCollector1 = new ShapeCollector(circle1);
-        shapeCollector1.removeShape(circle1);
+        shapeCollector1.addShape(circle1);
 
         //When
         boolean result = shapeCollector1.removeShape(circle1);
@@ -94,7 +94,7 @@ public class ShapeCollectorTestSuite {
 
     @Test
 
-    public void testShowFiigures(){
+    public void testShowFigures(){
 
         //Given
         Triangle triangle1= new Triangle(9.0,61.2);
@@ -103,10 +103,10 @@ public class ShapeCollectorTestSuite {
 
         //When
         ArrayList<Shape>retrievedShapes=new ArrayList<Shape>();
-        retrievedShapes = shapeCollector2.showFigures(retrievedShapes);
+        Shape triangle2= shapeCollector2.showFigures(retrievedShapes);
 
         //Then
-        Assert.assertEquals(triangle1,retrievedShapes);
+        Assert.assertEquals(triangle1,triangle2);
     }
 
 
