@@ -43,22 +43,22 @@ public class AdvStatistics {
     }
 
     public double countUsers(){
-        double amountOfUsers=statistics.usersNames().size()-1;
+        double amountOfUsers=statistics.usersNames().size();
         return amountOfUsers;
     }
 
     public double countAverageQuantityOfPostsPerUser() {
-        double averageQuantityOfPostsPerUser = (postsCount() / countUsers());
+        averageQuantityOfPostsPerUser = (postsCount() / countUsers());
         return averageQuantityOfPostsPerUser;
     }
 
     public double countAverageQuantityOfCommentsPerUser() {
-        double averageQuantityOfCommentsPerUser = (commentsCount() / countUsers());
+        averageQuantityOfCommentsPerUser = (commentsCount() / countUsers());
         return averageQuantityOfCommentsPerUser;
     }
 
         public double countAverageQuantityOfCommentsPerPost(){
-        double averageQuantityOfCommentsPerPost=(commentsCount() / postsCount());
+        averageQuantityOfCommentsPerPost=(commentsCount() / postsCount());
         return averageQuantityOfCommentsPerPost;
     }
 
