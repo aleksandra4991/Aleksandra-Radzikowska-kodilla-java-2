@@ -5,19 +5,16 @@ import java.util.ArrayList;
 
     public class ShapeCollector {
 
-        private Shape shape;
+
         private ArrayList<Shape> shapes=new ArrayList<Shape>();
 
         public ArrayList<Shape> getShapes() {
             return shapes;
         }
 
-        public ShapeCollector(Shape shape) {
-            this.shape = shape;
-        }
+
 
         public void addShape(Shape shape){
-            ShapeCollector shapeCollector=new ShapeCollector(shape);
             shapes.add(shape);
         }
 
@@ -42,10 +39,8 @@ import java.util.ArrayList;
             return shape;
         }
 
-        public Shape showFigures(ArrayList<Shape>shapes) {
-            for (int i = 0; i < shapes.size(); i++) {
-            }
-            return shape;
+        public ArrayList<Shape> showFigures(ArrayList<Shape>shapes) {
+            return shapes;
         }
     }
 

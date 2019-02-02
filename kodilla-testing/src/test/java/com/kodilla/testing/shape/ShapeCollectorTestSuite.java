@@ -34,7 +34,7 @@ public class ShapeCollectorTestSuite {
 
         //Given
         Shape triangle=new Triangle(8, 5);
-        ShapeCollector shapeCollector=new ShapeCollector(triangle);
+        ShapeCollector shapeCollector=new ShapeCollector();
 
         //When
         shapeCollector.addShape(triangle);
@@ -49,7 +49,7 @@ public class ShapeCollectorTestSuite {
 
     //Given
         Shape circle = new Circle(4);
-        ShapeCollector shapeCollector1 = new ShapeCollector(circle);
+        ShapeCollector shapeCollector1 = new ShapeCollector();
         shapeCollector1.addShape(circle);
 
      //When
@@ -66,7 +66,7 @@ public class ShapeCollectorTestSuite {
 
         //Given
         Shape circle1=new Circle(4);
-        ShapeCollector shapeCollector1 = new ShapeCollector(circle1);
+        ShapeCollector shapeCollector1 = new ShapeCollector();
 
         //When
         boolean result = shapeCollector1.removeShape(circle1);
@@ -81,7 +81,7 @@ public class ShapeCollectorTestSuite {
 
         //Given
         Shape circle1=new Circle(4);
-        ShapeCollector shapeCollector1 = new ShapeCollector(circle1);
+        ShapeCollector shapeCollector1 = new ShapeCollector();
         shapeCollector1.addShape(circle1);
 
         //When
@@ -98,15 +98,15 @@ public class ShapeCollectorTestSuite {
 
         //Given
         Triangle triangle1= new Triangle(9.0,61.2);
-        ShapeCollector shapeCollector2= new ShapeCollector(triangle1);
-        shapeCollector2.addShape(triangle1);
+        ArrayList<Shape>givenShapes=new ArrayList<Shape>();
+        givenShapes.add(triangle1);
 
         //When
-        ArrayList<Shape>retrievedShapes=new ArrayList<Shape>();
-        Shape triangle2= shapeCollector2.showFigures(retrievedShapes);
+        ShapeCollector shapeCollector2=new ShapeCollector();
+        shapeCollector2.showFigures(givenShapes);
 
         //Then
-        Assert.assertEquals(triangle1,triangle2);
+        Assert.assertTrue(givenShapes.contains(triangle1));
     }
 
 
