@@ -10,9 +10,6 @@ import java.util.Set;
 
 public class WorldTestSuite {
 
-    China.getPeopleQuantity(){
-        return new BigDecimal(5000000);
-    }
 
     @Test
     public BigDecimal testGetPeopleQuantity(){
@@ -26,12 +23,12 @@ public class WorldTestSuite {
         ourWorld.add(Europe);
         ourWorld.add(NorthAmerica);
 
-        Country China=new Country();
-        Country India=new Country();
-        Country Poland=new Country();
-        Country Italy=new Country();
-        Country USA=new Country();
-        Country Canada=new Country();
+        Country China=new Country(new BigDecimal(1386000000000));
+        Country India=new Country(new BigDecimal(1339000000000));
+        Country Poland=new Country(new BigDecimal(3797000000));
+        Country Italy=new Country(new BigDecimal(6059000000));
+        Country USA=new Country(new BigDecimal(3257000000));
+        Country Canada=new Country(new BigDecimal(3671000000));
 
         Asia.add(China);
         Asia.add(India);
@@ -40,24 +37,15 @@ public class WorldTestSuite {
         NorthAmerica.add(USA);
         NorthAmerica.add(Canada);
 
-        China.getPeopleQuantity(){
-            return new BigDecimal("5000000");
-        }
-        India.getPeopleQuantity(){
-            return new BigDecimal("7000000");
-        }
-        Poland.getPeopleQuantity(){
-            return new BigDecimal("300000");
-        }
-        Italy.getPeopleQuantity(){
-            return new BigDecimal("200000");
-        }
-        USA.getPeopleQuantity(){
-            return new BigDecimal("6000000");
-        }
-        Canada.getPeopleQuantity(){
-            return new BigDecimal("4500000");
-        }
+        China.getPeopleQuantity();
+        India.getPeopleQuantity();
+        Poland.getPeopleQuantity();
+        Italy.getPeopleQuantity();
+        USA.getPeopleQuantity();
+        Canada.getPeopleQuantity();
 
+        //Then
+        BigDecimal peopleQuantity;
+        peopleQuantity.getPeopleQuantity();
     }
 }
