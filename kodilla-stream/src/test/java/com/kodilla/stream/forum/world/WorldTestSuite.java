@@ -2,6 +2,8 @@ package com.kodilla.stream.forum.world;
 
 import com.kodilla.stream.world.Continent;
 import com.kodilla.stream.world.Country;
+import com.kodilla.stream.world.World;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -44,8 +46,11 @@ public class WorldTestSuite {
         USA.getPeopleQuantity();
         Canada.getPeopleQuantity();
 
+        //When
+        World world=new World();
+        BigDecimal peopleOfWorld =world.getPeopleQuantity();
+
         //Then
-        BigDecimal peopleQuantity;
-        peopleQuantity.getPeopleQuantity();
+        Assert.assertEquals(2741784000000,peopleOfWorld);
     }
 }

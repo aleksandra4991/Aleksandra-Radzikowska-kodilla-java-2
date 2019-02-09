@@ -10,7 +10,7 @@ public final class Country {
         this.peopleQuantity=peopleQuantity;
     }
 
-    public final BigDecimal getPeopleQuantity(){
-       return BigDecimal.ZERO;
-   }
+    public final BigDecimal getPeopleQuantity() {
+        return peopleQuantity;
+    }
 }
