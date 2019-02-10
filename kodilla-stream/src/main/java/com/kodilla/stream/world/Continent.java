@@ -6,10 +6,11 @@ import java.util.Set;
 
 public final class Continent {
 
-    Set <Country> continent = new HashSet<Country>();
+   private final Set <Country> continent = new HashSet<Country>();
 
-    public final Set<Country> getContinent() {
-        return continent;
+
+    public Set<Country> getContinent() {
+        return new HashSet<>(continent);
     }
 
 

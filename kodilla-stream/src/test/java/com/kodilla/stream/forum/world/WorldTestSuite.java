@@ -14,7 +14,7 @@ public class WorldTestSuite {
 
 
     @Test
-    public BigDecimal testGetPeopleQuantity(){
+    public void testGetPeopleQuantity(){
         //Given
         Set<Continent> ourWorld= new HashSet<Continent>();
         Continent Asia=new Continent();
@@ -25,12 +25,12 @@ public class WorldTestSuite {
         ourWorld.add(Europe);
         ourWorld.add(NorthAmerica);
 
-        Country China=new Country(new BigDecimal(1386000000000));
-        Country India=new Country(new BigDecimal(1339000000000));
-        Country Poland=new Country(new BigDecimal(3797000000));
-        Country Italy=new Country(new BigDecimal(6059000000));
-        Country USA=new Country(new BigDecimal(3257000000));
-        Country Canada=new Country(new BigDecimal(3671000000));
+        Country China=new Country(new BigDecimal("1386000000000"));
+        Country India=new Country(new BigDecimal("1339000000000"));
+        Country Poland=new Country(new BigDecimal("3797000000"));
+        Country Italy=new Country(new BigDecimal("6059000000"));
+        Country USA=new Country(new BigDecimal("3257000000"));
+        Country Canada=new Country(new BigDecimal("3671000000"));
 
         Asia.add(China);
         Asia.add(India);
@@ -47,10 +47,10 @@ public class WorldTestSuite {
         Canada.getPeopleQuantity();
 
         //When
-        World world=new World();
+        World world=new World(ourWorld);
         BigDecimal peopleOfWorld =world.getPeopleQuantity();
 
         //Then
-        Assert.assertEquals(2741784000000,peopleOfWorld);
+        Assert.assertEquals(new BigDecimal("2741784000000"),peopleOfWorld);
     }
 }

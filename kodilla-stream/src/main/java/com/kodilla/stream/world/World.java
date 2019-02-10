@@ -8,7 +8,11 @@ import java.util.Set;
 
 public final class World {
 
-    private final Set<Continent> world = new HashSet<Continent>();
+    private final Set<Continent> world;
+
+    public World(final Set<Continent>world) {
+        this.world=world;
+    }
 
     public Set<Continent> getWorld() {
         return new HashSet<Continent>(world);
@@ -16,11 +20,10 @@ public final class World {
 
 
     public BigDecimal getPeopleQuantity(){
-        BigDecimal peopleQuantity = BigDecimal.ZERO;
-     return  peopleQuantity = world.stream()
+     return   world.stream()
              .flatMap(continent -> continent.getContinent().stream())
              .map(Country::getPeopleQuantity)
-             .reduce(BigDecimal.ZERO, (country, current) -> country = country.add(current));
+             .reduce(BigDecimal.ZERO, (peopleQuantity, current) -> peopleQuantity = peopleQuantity.add(current));
 
     }
 }
