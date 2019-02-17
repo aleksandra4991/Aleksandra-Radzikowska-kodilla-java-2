@@ -9,9 +9,11 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.stream.Collectors.summarizingDouble;
 import static java.util.stream.Collectors.toList;
 
 public class BoardTestSuite {
@@ -183,19 +185,20 @@ public class BoardTestSuite {
                 LocalDate.now().minusDays(10),
                 LocalDate.now().plusDays(25));
 
-        /*List<TaskList> inProgressTasks = new ArrayList<>();
+        List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
-        long longTasks;
+        double longTasks;
         longTasks = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(Task::getCreated)
-                .map(x -> Period.between(LocalDate.of(x),LocalDate.now()))
-                .getAsDouble
+                .map(x -> ChronoUnit.DAYS.between(x,LocalDate.now()))
+                .mapToDouble(x->(double)x)
                 .average()
-                .getAsPlus;
+                .getAsDouble();
 
+        //Then
+        Assert.assertEquals(10.0,longTasks,0.1);
 
     }
 }
-*/
