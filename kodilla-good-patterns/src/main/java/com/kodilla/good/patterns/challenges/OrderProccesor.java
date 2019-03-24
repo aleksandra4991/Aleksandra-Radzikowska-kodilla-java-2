@@ -15,10 +15,10 @@ public class OrderProccesor {
     }
 
     public OrderDto process(final OrderRequest orderRequest) {
-        boolean isRented = orderService.order(orderRequest.getClient(), orderRequest.getProduct(),orderRequest.getSentToClient(),
+        boolean isOrdered = orderService.order(orderRequest.getClient(), orderRequest.getProduct(),orderRequest.getSentToClient(),
                 orderRequest.getDelieveredToClient());
 
-        if(isRented) {
+        if(isOrdered) {
             informationService.inform(orderRequest.getClient());
             orderRepository.createOrder(orderRequest.getClient(),orderRequest.getProduct(),orderRequest.getDateOfOrder());
             return new OrderDto(orderRequest.getClient(), true);
