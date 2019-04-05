@@ -32,4 +32,8 @@ public class DirectFlightTo {
         return "Bezpośrednie loty do:" + directCityFlightTo + '\'' +
                 '}';
     }
+
+    public String getDirectCityFlightTo() {
+        return directCityFlightTo;
+    }
 }

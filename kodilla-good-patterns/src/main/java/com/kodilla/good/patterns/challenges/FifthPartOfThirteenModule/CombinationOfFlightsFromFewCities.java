@@ -39,6 +39,7 @@ public final class CombinationOfFlightsFromFewCities {
         whereYouCanFlyFromWhere.put(flightFrom5, directFlightTo9);
         whereYouCanFlyFromWhere.put(flightFrom5, directFlightTo5);
         whereYouCanFlyFromWhere.put(flightFrom5, directFlightTo7);
+        whereYouCanFlyFromWhere.put(flightFrom1,directFlightTo4);
 
         return new HashMap<FlightFrom,DirectFlightTo>(whereYouCanFlyFromWhere);
 
