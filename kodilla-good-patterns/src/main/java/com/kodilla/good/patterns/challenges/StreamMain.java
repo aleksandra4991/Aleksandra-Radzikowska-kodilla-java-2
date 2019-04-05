@@ -12,7 +12,7 @@ public class StreamMain {
 
         MovieStore.getMovies().entrySet()
                 .stream()
-                .flatMap()
+                .filter()
 
             }
         }
