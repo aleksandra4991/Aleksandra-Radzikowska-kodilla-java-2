@@ -1,5 +1,5 @@
 package com.kodilla.good.patterns.challenges;
-/*
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,9 +12,8 @@ public class StreamMain {
 
         MovieStore.getMovies().entrySet()
                 .stream()
-                .map()
+                .flatMap()
 
             }
         }
 
-*/
