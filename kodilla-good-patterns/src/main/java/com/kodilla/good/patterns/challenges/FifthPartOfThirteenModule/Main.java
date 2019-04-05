@@ -13,7 +13,7 @@ public class Main {
                 .filter(e->e.getKey().hashCode()==1)
                 .flatMap(directFlightTo->directFlightTo.getDirectCityFlightTo)
 
-        flightsFromWarsaw
+        //flightsFromWarsaw
 
     }
 }*/
