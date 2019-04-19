@@ -12,6 +12,14 @@ public class FlightFrom {
         this.numberOfCityFlightFrom = numberOfCityFlightFrom;
     }
 
+    public String getCityFlightFrom() {
+        return cityFlightFrom;
+    }
+
+    public int getNumberOfCityFlightFrom() {
+        return numberOfCityFlightFrom;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -26,3 +34,4 @@ public class FlightFrom {
         return Objects.hash(numberOfCityFlightFrom);
     }
 }
+

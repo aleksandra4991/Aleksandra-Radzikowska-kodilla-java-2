@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.stream.forum.book.BookTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-03-29T18:45:33" hostname="DESKTOP-2KS3AM8" time="0.029">
+<testsuite name="com.kodilla.stream.forum.book.BookTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-04-19T18:07:44" hostname="DESKTOP-2KS3AM8" time="0.008">
   <properties/>
-  <testcase name="testGetListUsingFor" classname="com.kodilla.stream.forum.book.BookTestSuite" time="0.02"/>
-  <testcase name="testGetListUsingIntStream" classname="com.kodilla.stream.forum.book.BookTestSuite" time="0.008"/>
+  <testcase name="testGetListUsingFor" classname="com.kodilla.stream.forum.book.BookTestSuite" time="0.003"/>
+  <testcase name="testGetListUsingIntStream" classname="com.kodilla.stream.forum.book.BookTestSuite" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -8,7 +8,7 @@ public class ForumUser {
     String username;
 
     public ForumUser() {
-        username= "John Smith";
+        this.username= "John Smith";
     }
 
     public String getUsername() {

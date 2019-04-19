@@ -5,15 +5,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StreamMain {
 
         public static void main(String[] args) {
 
-        MovieStore.getMovies().entrySet()
+        String movies = MovieStore.getMovies().entrySet()
                 .stream()
-                .filter()
+                .flatMap(stringListEntry -> stringListEntry.getValue().stream())
+                .collect(Collectors.joining("!"));
+
+        System.out.println(movies);
 
             }
         }
-

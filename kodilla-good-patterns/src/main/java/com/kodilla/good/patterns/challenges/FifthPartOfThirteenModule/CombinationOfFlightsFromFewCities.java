@@ -1,11 +1,13 @@
 package com.kodilla.good.patterns.challenges.FifthPartOfThirteenModule;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public final class CombinationOfFlightsFromFewCities {
 
-    public static HashMap<FlightFrom,DirectFlightTo> getMap() {
-        final HashMap<FlightFrom, DirectFlightTo> whereYouCanFlyFromWhere = new HashMap<>();
+    public static List<Flights> getList() {
+        List<Flights> flightsList = new ArrayList<>();
 
         FlightFrom flightFrom1 = new FlightFrom("Warsaw",1);
         FlightFrom flightFrom2 = new FlightFrom("Praha",2);
@@ -24,24 +26,24 @@ public final class CombinationOfFlightsFromFewCities {
         DirectFlightTo directFlightTo8 = new DirectFlightTo("Vienna",7);
         DirectFlightTo directFlightTo9 = new DirectFlightTo("Bratislava",9);
 
-        whereYouCanFlyFromWhere.put(flightFrom1, directFlightTo1);
-        whereYouCanFlyFromWhere.put(flightFrom1, directFlightTo2);
-        whereYouCanFlyFromWhere.put(flightFrom1, directFlightTo6);
-        whereYouCanFlyFromWhere.put(flightFrom2, directFlightTo3);
-        whereYouCanFlyFromWhere.put(flightFrom2, directFlightTo7);
-        whereYouCanFlyFromWhere.put(flightFrom3, directFlightTo9);
-        whereYouCanFlyFromWhere.put(flightFrom3, directFlightTo8);
-        whereYouCanFlyFromWhere.put(flightFrom3, directFlightTo6);
-        whereYouCanFlyFromWhere.put(flightFrom4, directFlightTo2);
-        whereYouCanFlyFromWhere.put(flightFrom4, directFlightTo5);
-        whereYouCanFlyFromWhere.put(flightFrom4, directFlightTo7);
-        whereYouCanFlyFromWhere.put(flightFrom5, directFlightTo1);
-        whereYouCanFlyFromWhere.put(flightFrom5, directFlightTo9);
-        whereYouCanFlyFromWhere.put(flightFrom5, directFlightTo5);
-        whereYouCanFlyFromWhere.put(flightFrom5, directFlightTo7);
-        whereYouCanFlyFromWhere.put(flightFrom1,directFlightTo4);
+      flightsList.add(new Flights(flightFrom1, directFlightTo1));
+        flightsList.add(new Flights(flightFrom1, directFlightTo2));
+        flightsList.add(new Flights(flightFrom1, directFlightTo6));
+        flightsList.add(new Flights(flightFrom2, directFlightTo3));
+        flightsList.add(new Flights(flightFrom2, directFlightTo7));
+        flightsList.add(new Flights(flightFrom3, directFlightTo9));
+        flightsList.add(new Flights(flightFrom3, directFlightTo8));
+        flightsList.add(new Flights(flightFrom3, directFlightTo6));
+        flightsList.add(new Flights(flightFrom4, directFlightTo2));
+        flightsList.add(new Flights(flightFrom4, directFlightTo5));
+        flightsList.add(new Flights(flightFrom4, directFlightTo7));
+        flightsList.add(new Flights(flightFrom5, directFlightTo1));
+        flightsList.add(new Flights(flightFrom5, directFlightTo9));
+        flightsList.add(new Flights(flightFrom5, directFlightTo5));
+        flightsList.add(new Flights(flightFrom5, directFlightTo7));
+        flightsList.add(new Flights(flightFrom1,directFlightTo4));
 
-        return new HashMap<FlightFrom,DirectFlightTo>(whereYouCanFlyFromWhere);
+        return flightsList;
 
     }
 }

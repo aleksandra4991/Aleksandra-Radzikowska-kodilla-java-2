@@ -8,12 +8,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String flightsFromWarsaw = (String) CombinationOfFlightsFromFewCities.getMap().entrySet()
+        CombinationOfFlightsFromFewCities.getList()
                 .stream()
-                .filter(e->e.getKey().hashCode()==1)
-                .flatMap(directFlightTo->directFlightTo.getDirectCityFlightTo)
+                .filter(e -> e.getFlightFrom().getCityFlightFrom().equals("Warsaw"))
+                .map(directFlightTo -> directFlightTo.getDirectFlightTo().getDirectCityFlightTo())
+                .forEach(System.out::println);
+    }
+}
+        /*String flightsToVienna = (String) CombinationOfFlightsFromFewCities.getMap().entrySet()
+                .stream()
+                .filter(e->e.getValue().getDirectCityFlightTo().equals("Vienna"))
+                .map(flightFrom->flightFrom.getKey().getCityFlightFrom())
+                .collect(Collectors.joining(",\n","<<",">>"));
 
-        //flightsFromWarsaw
-
+        System.out.println(flightsToVienna);
     }
 }*/
