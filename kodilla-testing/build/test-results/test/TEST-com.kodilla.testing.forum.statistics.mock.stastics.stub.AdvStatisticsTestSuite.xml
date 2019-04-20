@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-04-19T18:07:49" hostname="DESKTOP-2KS3AM8" time="0.179">
+<testsuite name="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-04-20T17:03:51" hostname="DESKTOP-2KS3AM8" time="0.259">
   <properties/>
-  <testcase name="testShowStatisticsWithMockWithNumberOfCommentsBiggerThanNumberOfPosts" classname="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" time="0.161"/>
-  <testcase name="testShowStatisticsWithMockWithAmountOfUsersEqualTo100" classname="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" time="0.013"/>
+  <testcase name="testShowStatisticsWithMockWithNumberOfCommentsBiggerThanNumberOfPosts" classname="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" time="0.232"/>
+  <testcase name="testShowStatisticsWithMockWithAmountOfUsersEqualTo100" classname="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" time="0.021"/>
   <testcase name="testShowStatisticsWithMockWithCommentsCountEqualTo0" classname="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" time="0.001"/>
   <testcase name="testShowStatisticsWithMockWithAmountOfUsersEqualToZero" classname="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" time="0.001"/>
-  <testcase name="testShowStatisticsWithMockWithPostsCountEqualTo1000" classname="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" time="0.0"/>
-  <testcase name="testShowStatisticsWithMockWithPostsCountEqualToZero" classname="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" time="0.001"/>
+  <testcase name="testShowStatisticsWithMockWithPostsCountEqualTo1000" classname="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" time="0.001"/>
+  <testcase name="testShowStatisticsWithMockWithPostsCountEqualToZero" classname="com.kodilla.testing.forum.statistics.mock.stastics.stub.AdvStatisticsTestSuite" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
