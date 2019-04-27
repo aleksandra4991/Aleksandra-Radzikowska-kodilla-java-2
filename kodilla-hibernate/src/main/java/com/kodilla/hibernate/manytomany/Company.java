@@ -5,6 +5,14 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@NamedNativeQuery(
+        name = "Company.retrieveCompaniesWithFirstThreeLettersOfSurnameEqualTo",
+        query = "SELECT * FROM COMPANIES" +
+                " WHERE LPAD('GRE',3,'??') ",
+        resultClass = Company.class
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
