@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.repository.query.Param;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -109,11 +110,11 @@ public class CompanyDaoTestSuite {
 
 
         //When
-        List<Employee> employeeRadzikowskaLastName = employeeDao.retrieveEmployeesWithLastNameEqualTo();
+        List<Employee> employeeRadzikowskaLastName = employeeDao.retrieveEmployeesWithLastNameEqualTo("Radzikowska");
 
 
         //Then
-        Assert.assertEquals(2, employeeRadzikowskaLastName.size());
+        Assert.assertEquals(1, employeeRadzikowskaLastName.size());
 
         //CleanUp
         try {
@@ -123,6 +124,10 @@ public class CompanyDaoTestSuite {
             employeeDao.delete(employee4);
             employeeDao.delete(employee5);
             employeeDao.delete(employee6);
+
+            companyDao.delete(company1);
+            companyDao.delete(company2);
+            companyDao.delete(company3);
         } catch (Exception e) {
             //do nothing
         }
@@ -172,7 +177,7 @@ public class CompanyDaoTestSuite {
         int employee6_ID = employee6.getId();
 
         //When
-        List<Company> companyGreFirstTreeLetters = companyDao.retrieveCompaniesWithFirstThreeLettersOfSurnameEqualTo();
+        List<Company> companyGreFirstTreeLetters = companyDao.retrieveCompaniesWithFirstThreeLettersOfNameEqualTo("GRE",3);
 
         //Then
         Assert.assertEquals(1, companyGreFirstTreeLetters.size());
@@ -185,6 +190,9 @@ public class CompanyDaoTestSuite {
             employeeDao.delete(employee4);
             employeeDao.delete(employee5);
             employeeDao.delete(employee6);
+            companyDao.delete(company1);
+            companyDao.delete(company2);
+            companyDao.delete(company3);
         } catch (Exception e) {
             //do nothing
         }

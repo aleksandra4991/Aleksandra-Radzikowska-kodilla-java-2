@@ -65,7 +65,7 @@ public class Item {
         this.quantity = quantity;
     }
 
-    @Column(name = "PRODUCT_VALUE(PRODUCT_PRICE*PRODUCT_QUANTITY")
+    @Column(name = "PRODUCT_WARTOSC")
     public BigDecimal getValue() {
         return value;
     }

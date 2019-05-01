@@ -7,15 +7,15 @@ import java.util.List;
 
 
 @NamedNativeQuery(
-        name = "Company.retrieveCompaniesWithFirstThreeLettersOfSurnameEqualTo",
-        query = "SELECT * FROM COMPANIES" +
-                " WHERE LPAD('GRE',3,'??') ",
+        name = "Company.retrieveCompaniesWithFirstThreeLettersOfNameEqualTo",
+        query = "FROM COMPANIES WHERE LEFT(numberOfLetters,name = :COMPANY_NAME) ",
         resultClass = Company.class
 )
 
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
+    private int numberOfLetters;
     private int id;
     private String name;
     private List<Employee>  employees = new ArrayList<>();
@@ -25,6 +25,10 @@ public class Company {
 
     public Company(String name) {
         this.name = name;
+    }
+
+    public int getNumberOfLetters() {
+        return numberOfLetters;
     }
 
     @ManyToMany(cascade = CascadeType.ALL,mappedBy = "companies")
