@@ -177,7 +177,7 @@ public class CompanyDaoTestSuite {
         int employee6_ID = employee6.getId();
 
         //When
-        List<Company> companyGreFirstTreeLetters = companyDao.retrieveCompaniesWithFirstThreeLettersOfNameEqualTo("GRE",3);
+        List<Company> companyGreFirstTreeLetters = companyDao.retrieveCompaniesWithFirstThreeLettersOfNameEqualTo("GRE");
 
         //Then
         Assert.assertEquals(1, companyGreFirstTreeLetters.size());
@@ -197,4 +197,5 @@ public class CompanyDaoTestSuite {
             //do nothing
         }
     }
+
 }
