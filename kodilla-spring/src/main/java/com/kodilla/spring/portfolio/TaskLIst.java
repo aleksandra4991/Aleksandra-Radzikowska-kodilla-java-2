@@ -10,4 +10,8 @@ public class TaskLIst {
     public TaskLIst(List<String> tasks){
         tasks = new ArrayList<>();
     }
+
+    public List<String> getTasks() {
+        return tasks;
+    }
 }
